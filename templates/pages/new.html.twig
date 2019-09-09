@@ -1,0 +1,276 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New | Pages | Dashboard{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor.css">
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor-contents.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.33.0/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link href="{{ asset('assets/css/custom/forms.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+
+    {% include '_includes/_header.html.twig' %}
+    {# start app-container #}
+    <div class="app-container">
+        {% include '_includes/_sidebar.html.twig' %}
+        {# begin app-main #}
+        <div class="app-main" id="main">
+            {# begin container-fluid #}
+            <div class="container-fluid">
+                {# begin row #}
+                <div class="row">
+                    <div class="col-md-12 m-b-30">
+                        {# begin page-title #}
+                        <div class="d-block d-lg-flex flex-nowrap align-items-center">
+                            <div class="page-title mr-4 pr-4 border-right">
+                                <h1>New Page</h1>
+                            </div>
+                            <div class="ml-auto d-flex align-items-center">
+                                <nav>
+                                    <ol class="breadcrumb p-0 m-b-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="{{ path('app_dashboard') }}"><i class="ti ti-home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Pages
+                                        </li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Add New</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        {# end page-title #}
+                    </div>
+                </div>
+                {# end row #}
+                {# begin row #}
+                <div class="row">
+                    <div class="col-sm-12">
+                        {# begin form #}
+                        <div class="form-group mb-0">
+                            {{ form_start(newPageForm, {'attr': {'id':'pages_add'}}) }}
+
+                                {# start card for page settings #}
+                            <div class="card card-statistics">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-heading">
+                                        <h4 class="card-title">Page Settings</h4>
+                                    </div>
+                                </div>
+                                {# start card-body #}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">Page Type</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.pageType) }}
+                                            <span class="font-14 text-muted">Select the type of page you want to create</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">Page Name</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.PageName) }}
+                                            <span class="font-14 text-muted">Enter descriptive name for your new page - internal use only</span>
+                                            <div class="form-error">
+                                                {{ form_errors(newPageForm.PageName) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">Page URL</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.slug) }}
+                                            <span class="font-14 text-muted">Auto-generated url string</span>
+                                            <div class="form-error">
+                                                {{ form_errors(newPageForm.slug) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Homepage</label>
+                                        <div class="col-sm-10">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    {{ form_widget(newPageForm.isHomePage) }}
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# end card for page settings #}
+
+                            {# start card for menu settings #}
+                            <div class="card card-statistics">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-heading">
+                                        <h4 class="card-title">Menu Settings</h4>
+                                    </div>
+                                </div>
+                                {# start card-body #}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">Menu Title</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.menuTitle) }}
+                                            <span class="font-14 text-muted">Link text displayed on the navigation menu</span>
+                                            <div class="form-error">
+                                                {{ form_errors(newPageForm.menuTitle) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Menu Parent</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.parent) }}
+                                            <span class="font-14 text-muted">Nested menus only - select parent from dropdown - leave blank for top level links</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Menu Order</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.pageOrder) }}
+                                            <span class="font-14 text-muted">Select numeric order of menu link in navigation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# end card for menu settings #}
+
+                            {# start card for seo settings #}
+                            <div class="card card-statistics">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-heading">
+                                        <h4 class="card-title">SEO Settings</h4>
+                                    </div>
+                                </div>
+                                {# start card-body #}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">SEO Title</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.seoTitle) }}
+                                            <span class="font-14 text-muted">Google displays the first 50–60 characters of a title</span>
+                                            <div class="form-error">
+                                                {{ form_errors(newPageForm.seoTitle) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label required">SEO Description</label>
+                                        <div class="col-sm-10">
+                                            {{ form_widget(newPageForm.seoDescription) }}
+                                            <span class="font-14 text-muted">It's recommended that good descriptions are between 50–160 characters long</span>
+                                            <div class="form-error">
+                                                {{ form_errors(newPageForm.seoDescription) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# end card for seo settings #}
+
+                            {# start card for content settings #}
+                            <div class="card card-statistics">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-heading">
+                                        <h4 class="card-title">Page Content</h4>
+                                    </div>
+                                </div>
+                                {# start card-body #}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <div id="editSection"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# end card for content settings #}
+
+                            {# start card for live settings #}
+                            <div class="card card-statistics">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-heading">
+                                        <h4 class="card-title">Live Settings</h4>
+                                    </div>
+                                </div>
+                                {# start card-body #}
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Set Live</label>
+                                        <div class="col-sm-10">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    {{ form_widget(newPageForm.setLive) }}
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="submit" class="btn btn-primary">Create Page</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# end card for live settings #}
+
+                            {{ form_end(newPageForm) }}
+                        </div>
+                        {# end form #}
+                    </div>
+                </div>
+                {# end row #}
+            </div>
+            {# end container-fluid #}
+        </div>
+        {# end app-main #}
+    </div>
+    {# end app-container #}
+    {% include '_includes/_footer.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://uicdn.toast.com/tui-editor/latest/tui-editor-Editor-full.js"></script>
+    <script>
+        function slugify(text) {
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '-')           // Replace spaces with -
+                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                .replace(/^-+/, '')             // Trim - from start of text
+                .replace(/-+$/, '');            // Trim - from end of text
+        }
+        $('#pages_PageName').change(function() {
+            const str = slugify($(this).val());
+            $('#pages_slug').val(str);
+        });
+        $( "#pages_seoTitle" ).change(function() {
+            this.value = this.value.replace(/\b\w+/g,function(s){return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();});
+        });
+        $("#pages_isHomePage").change(function() {
+            if ($('#pages_slug').val() !== '/') {
+                $('div').data('store_slug', $('#pages_slug').val());
+            }
+            if($("#pages_isHomePage").is(':checked')){
+                $('#pages_slug').val('/');
+            } else {
+                $('#pages_slug').val($('div').data('store_slug'));
+            }
+        });
+        const editor = new tui.Editor({
+            el: document.querySelector('#editSection'),
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: '500px'
+        });
+        $('#pages_add').submit(function(event) {
+            $('#pages_pageContent').val(editor.getValue());
+        });
+    </script>
+{% endblock %}

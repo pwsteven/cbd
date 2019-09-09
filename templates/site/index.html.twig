@@ -1,0 +1,11 @@
+{% extends 'site_base.html.twig' %}
+
+{% block title %}{{ page.seoTitle }}{% endblock %}
+{% block description %}{{ page.seoDescription }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('revolution/css/settings.css') }}" media="screen">
+{% endblock %}
+{% block body %}
+ {# dump() #}
+{% endblock %}

@@ -1,0 +1,3 @@
+#pages_add label.required:before {content: "* "; color: #AA3333;}
+#pages_add div.form-error ul {list-style: none; margin: 0; padding: 0;}
+#pages_add div.form-error ul li {color: #AA3333; font-weight: bold;}

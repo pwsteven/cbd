@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{% block description %}Welcome to our site...{% endblock %}" />
+    <meta name="author" content="pwsteven.co.uk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>{% block title %}Welcome{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    {# start wrapper #}
+    <div class="wrapper">
+
+        <div id="pre-loader">
+            <img src="" alt="">
+        </div>
+
+        {% block body %}{% endblock %}
+    </div>
+    {# end wrapper #}
+    <div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-angle-up"></i> <span>TOP</span></a></div>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/plugins-jquery.js') }}"></script>
+    <script>const plugin_path = 'js/';</script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+{% endblock %}
+</body>
+</html>

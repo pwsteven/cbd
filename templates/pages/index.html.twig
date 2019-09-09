@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pages | Dashboard{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
+{% endblock %}
+{% block body %}
+
+    {% include '_includes/_header.html.twig' %}
+    {# start app-container #}
+    <div class="app-container">
+        {% include '_includes/_sidebar.html.twig' %}
+        {# begin app-main #}
+        <div class="app-main" id="main">
+            {# begin container-fluid #}
+            <div class="container-fluid">
+                {# begin row #}
+                <div class="row">
+                    <div class="col-md-12 m-b-30">
+                        {# begin page-title #}
+                        <div class="d-block d-lg-flex flex-nowrap align-items-center">
+                            <div class="page-title mr-4 pr-4 border-right">
+                                <h1>Pages</h1>
+                            </div>
+                            <div class="ml-auto d-flex align-items-center">
+                                <nav>
+                                    <ol class="breadcrumb p-0 m-b-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="{{ path('app_dashboard') }}"><i class="ti ti-home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Pages
+                                        </li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">View All</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        {# end page-title #}
+                    </div>
+                </div>
+                {# end row #}
+                {# begin row #}
+                <div class="row">
+                    <div class="col-sm-12">
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {# start main content #}
+                        <div class="card card-statistics">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="card-heading">
+                                    <h4 class="card-title">View All Pages</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="pages_table">Loading...</div>
+                            </div>
+                        </div>
+                        {# end main content #}
+                    </div>
+                </div>
+                {# end row #}
+            </div>
+            {# end container-fluid #}
+        </div>
+        {# end app-main #}
+    </div>
+    {# end app-container #}
+    {% include '_includes/_footer.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+    <script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+    <script>
+        $(function() {
+            $('#pages_table').initDataTables({{ datatable_settings(datatable) }});
+        });
+    </script>
+{% endblock %}
