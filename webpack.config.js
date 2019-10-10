@@ -54,6 +54,11 @@ Encore
         corejs: 3
     })
 
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
+
     // enables Sass/SCSS support
     //.enableSassLoader()
 
@@ -70,6 +75,7 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
+
 ;
 
 module.exports = Encore.getWebpackConfig();

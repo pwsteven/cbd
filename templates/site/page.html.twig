@@ -2,12 +2,7 @@
 
 {% block title %}{{ page.seoTitle }}{% endblock %}
 {% block description %}{{ page.seoDescription }}{% endblock %}
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('revolution/css/settings.css') }}" media="screen">
-{% endblock %}
 {% block body %}
-    {{ include('blocks/_homepage_banners.html.twig') }}
     <section class="page-section-ptb">
         <div class="container">
             <div class="row">
@@ -20,3 +15,4 @@
         </div>
     </section>
 {% endblock %}
+
