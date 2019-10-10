@@ -2,52 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db59c3f0-3a98-4356-8d97-bd4e6e2bbc22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/lw_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/lw_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/lw_master_logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/lw_master_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap-datatables/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap-datatables/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap-datetimepicker/moment-datepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/chart/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/chart/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/chart/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/countdown/jquery.downCount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/counter/jquery.countTo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/easy-pie-chart/easy-pie-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/flickr/flickr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/fullcalendar/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/instagram/spectragram.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/isotope/isotope.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/isotope/masonry.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery-nice-select/jquery-nice-select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/mediaelement-and-player/mediaelement-and-player.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/mega-menu/mega_menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/mobile-slider/zenith.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/nicescroll/jquery.nicescroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/owl-carousel/owl-carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/plugins-jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/raindrops/raindrops.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/slick/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/slick/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/snow/snow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/snow/threecanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/typer/jquery.typer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blocks/_homepage_banners.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/site/page.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/site/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/lw_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/lw_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/site_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/site_base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -187,6 +149,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -236,7 +199,7 @@
       <workItem from="1568789012369" duration="1094000" />
       <workItem from="1569953941761" duration="144000" />
       <workItem from="1569954318067" duration="39000" />
-      <workItem from="1570705914539" duration="898000" />
+      <workItem from="1570705914539" duration="3081000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1566385306756</created>
@@ -252,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568043456850</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="10/10/2019">
+      <created>1570707188578</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570707188578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +245,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="Webpack install" />
-    <option name="LAST_COMMIT_MESSAGE" value="Webpack install" />
+    <MESSAGE value="10/10/2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="10/10/2019" />
   </component>
 </project>
